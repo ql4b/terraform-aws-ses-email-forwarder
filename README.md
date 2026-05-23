@@ -248,6 +248,17 @@ module "email" {
 | <a name="output_ses_rule_set_name"></a> [ses\_rule\_set\_name](#output\_ses\_rule\_set\_name) | Name of the SES receipt rule set |
 <!-- END_TF_DOCS -->
 
+## Deployment
+
+Install Lambda dependencies before applying:
+
+```bash
+cd src && npm ci && cd ..
+terraform apply
+```
+
+The `terraform-aws-lambda-function` module zips the entire `src/` directory (including `node_modules`) into the Lambda deployment package.
+
 ## SES receiving region
 
 Amazon SES inbound email receiving is only available in selected AWS regions. Deploy this module in a region that supports SES receiving and make sure the MX record points to the corresponding inbound endpoint.
