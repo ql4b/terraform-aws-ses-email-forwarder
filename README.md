@@ -250,14 +250,17 @@ module "email" {
 
 ## Deployment
 
-Build the Lambda binary before applying:
-
 ```bash
-make build
 terraform apply
 ```
 
-Requires Go 1.23+ installed. The Makefile cross-compiles for `linux/arm64` and produces `.build/forwarder.zip`.
+The Lambda binary is pre-compiled and shipped with the module. No build step required.
+
+To rebuild from source (requires Go 1.23+):
+
+```bash
+make build
+```
 
 ## SES receiving region
 

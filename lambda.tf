@@ -4,7 +4,7 @@ module "forwarder" {
   context    = module.this.context
   attributes = ["forwarder"]
 
-  filename = "${path.module}/.build/forwarder.zip"
+  filename = "${path.module}/assets/forwarder.zip"
   runtime  = "provided.al2023"
   handler  = "bootstrap"
   timeout  = 30
