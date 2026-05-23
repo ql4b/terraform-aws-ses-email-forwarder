@@ -22,7 +22,7 @@ variable "route53_zone_id" {
 variable "create_identity" {
   type        = bool
   default     = true
-  description = "Whether to create the SES domain identity and DKIM/SPF records"
+  description = "Whether to create the SES domain identity and DKIM records"
 }
 
 variable "create_mx_record" {
