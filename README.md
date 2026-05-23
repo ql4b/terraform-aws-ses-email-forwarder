@@ -279,6 +279,25 @@ If `create_mx_record = true`, the module can create that record in Route53.
 
 If DNS is managed elsewhere, set `create_mx_record = false` and create the MX record manually.
 
+## SPF record
+
+This module does not create an SPF TXT record because domains often have existing TXT records that would conflict.
+
+For improved deliverability, add `include:amazonses.com` to your domain's SPF record manually:
+
+```text
+v=spf1 include:amazonses.com -all
+```
+
+If the domain already has a TXT record (e.g. Google site verification), merge the SPF value into the existing record set:
+
+```text
+"v=spf1 include:amazonses.com -all"
+"google-site-verification=..."
+```
+
+SPF is not strictly required for forwarding — DKIM (created by this module when `create_identity = true`) is sufficient for most providers to accept the forwarded message.
+
 ## Message retention
 
 Inbound messages are stored as raw email objects in S3 before they are forwarded.
