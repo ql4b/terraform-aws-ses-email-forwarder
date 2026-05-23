@@ -62,10 +62,14 @@ Depending on configuration, the module can create:
 
 ## Usage
 
+> Pin to a specific version tag (e.g. `ref=v1.0.0`). Check [releases](https://github.com/ql4b/terraform-aws-ses-email-forwarder/releases) for the latest version.
+>
+> The `forward_to` addresses must be verified identities in SES within the same region. If your SES account is still in sandbox mode, both sender and recipient addresses must be verified.
+
 ```hcl
 
 module "cloudless_email" {
-  source = "git::https://github.com/ql4b/terraform-aws-ses-email-forwarder.git?ref=main"
+  source = "git::https://github.com/ql4b/terraform-aws-ses-email-forwarder.git?ref=v1.0.0"
   
 
   namespace = "cloudless"
@@ -103,7 +107,7 @@ If the SES identity is managed elsewhere, for example with an existing SES modul
 
 ```hcl
 module "airos_email" {
-  source = "git::https://github.com/ql4b/terraform-aws-ses-email-forwarder.git?ref=main"
+  source = "git::https://github.com/ql4b/terraform-aws-ses-email-forwarder.git?ref=v1.0.0"
 
   namespace = "airos"
   name      = "email"
@@ -133,7 +137,7 @@ All standard context variables are supported:
 
 ```hcl
 module "email" {
-  source = "git::https://github.com/ql4b/terraform-aws-ses-email-forwarder.git?ref=main"
+  source = "git::https://github.com/ql4b/terraform-aws-ses-email-forwarder.git?ref=v1.0.0"
 
   namespace   = "myorg"
   environment = "prod"
@@ -150,7 +154,7 @@ When composing with other modules that use the same labeling convention, pass co
 
 ```hcl
 module "email" {
-  source = "git::https://github.com/ql4b/terraform-aws-ses-email-forwarder.git?ref=main"
+  source = "git::https://github.com/ql4b/terraform-aws-ses-email-forwarder.git?ref=v1.0.0"
 
   context = module.label.context
 
