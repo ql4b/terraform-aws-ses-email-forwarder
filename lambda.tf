@@ -4,15 +4,14 @@ module "forwarder" {
   context    = module.this.context
   attributes = ["forwarder"]
 
-  source_dir = "${path.module}/src"
-  handler    = "forwarder.handler"
-  runtime    = "nodejs22.x"
-  timeout    = 30
+  filename = "${path.module}/.build/forwarder.zip"
+  runtime  = "provided.al2023"
+  handler  = "bootstrap"
+  timeout  = 30
 
   environment_variables = {
     S3_BUCKET  = aws_s3_bucket.inbox.id
     FORWARD_TO = join(",", var.forward_to)
-    FROM_EMAIL = "noreply@${var.domain_name}"
   }
 }
 

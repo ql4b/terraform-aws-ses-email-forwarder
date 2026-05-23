@@ -250,14 +250,14 @@ module "email" {
 
 ## Deployment
 
-Install Lambda dependencies before applying:
+Build the Lambda binary before applying:
 
 ```bash
-cd src && npm ci && cd ..
+make build
 terraform apply
 ```
 
-The `terraform-aws-lambda-function` module zips the entire `src/` directory (including `node_modules`) into the Lambda deployment package.
+Requires Go 1.23+ installed. The Makefile cross-compiles for `linux/arm64` and produces `.build/forwarder.zip`.
 
 ## SES receiving region
 
