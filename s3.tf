@@ -10,6 +10,8 @@ resource "aws_s3_bucket_lifecycle_configuration" "inbox" {
     id     = "expire-messages"
     status = "Enabled"
 
+    filter {}
+
     expiration {
       days = var.message_retention_days
     }
