@@ -1,5 +1,6 @@
 module "forwarder" {
-  source = "git::https://github.com/ql4b/terraform-aws-lambda-function.git?ref=v1.1.0"
+  source  = "ql4b/lambda-function/aws"
+  version = "~> 1.0"
 
   context    = module.this.context
   attributes = ["forwarder"]

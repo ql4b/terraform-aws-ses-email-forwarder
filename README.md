@@ -185,7 +185,7 @@ module "email" {
 
 | Name | Source | Version |
 | ---- | ------ | ------- |
-| <a name="module_forwarder"></a> [forwarder](#module\_forwarder) | git::https://github.com/ql4b/terraform-aws-lambda-function.git | v1.1.0 |
+| <a name="module_forwarder"></a> [forwarder](#module\_forwarder) | ql4b/lambda-function/aws | ~> 1.0 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
 
 ## Resources
