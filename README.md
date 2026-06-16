@@ -1,6 +1,6 @@
 # terraform-aws-ses-email-forwarder
 
-A minimal Terraform module for receiving email with Amazon SES and forwarding it to an existing mailbox.
+SES email forwarding to an existing mailbox
 
 ## Goal
 
