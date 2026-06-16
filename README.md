@@ -2,6 +2,8 @@
 
 A minimal Terraform module for receiving email with Amazon SES and forwarding it to an existing mailbox.
 
+## Goal
+
 This module is intended for small, domain-owned contact addresses where running a full mail server would be unnecessary overhead.
 
 Examples:
